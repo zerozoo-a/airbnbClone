@@ -1,15 +1,19 @@
-import React from "react";
-import nearDestinationData from "./nearDestinationData";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import nearDestinationData from './nearDestinationData';
 
 const ExploreNearbyStyle = styled.div`
   margin: 0;
   padding: 0;
-  outline: 1px solid red;
+  color: #222222;
+  & p {
+    font-size: 1.375rem;
+  }
   & .infoBox {
     display: flex;
+    align-items: center;
     & div {
-      width: 50vw;
+      width: 13rem;
     }
   }
   & li {
@@ -20,13 +24,12 @@ const ExploreNearbyStyle = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     padding: 0;
-    height: 12.75rem;
+    height: 13.75rem;
     overflow-x: scroll;
-    outline: 1px solid red;
   }
   & img {
-    width: 3rem;
-    height: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 0.4rem;
     margin: 1rem;
   }
@@ -35,14 +38,16 @@ const ExploreNearbyStyle = styled.div`
 const ExploreNearby = () => {
   return (
     <ExploreNearbyStyle>
-      가까운 여행지 둘러보기
+      <h2>가까운 여행지 둘러보기</h2>
       <ul>
         {nearDestinationData.locationList.map((v) => (
           <li key={v.alt}>
-            <div className="infoBox">
+            <div className='infoBox'>
               <img src={v.imageURL} alt={v.alt} />
               <div>
-                <div>{v.location}</div>
+                <div>
+                  <b>{v.location}</b>
+                </div>
                 <div>{v.distance}</div>
               </div>
             </div>

@@ -1,23 +1,24 @@
-import React, { useState, useRef, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styled, { createGlobalStyle } from "styled-components";
+import React, { useState, useRef, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
 import {
   faChevronLeft,
   faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
+
 const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ];
 const CalendarStyle = styled.div`
   list-style: none;
@@ -25,7 +26,7 @@ const CalendarStyle = styled.div`
     font-size: 1rem;
   }
 `;
-const Day = ["Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sat"];
+const Day = ['Sun', 'Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat'];
 const DayStyle = styled.ul`
   display: flex;
   padding: 0;
@@ -82,7 +83,7 @@ const Days = styled.ul`
     background-color: rgb(83, 153, 233);
   }
 `;
-//change the color of the previous and next days
+//  change the color of the previous and next days
 const date = new Date();
 date.setDate(1);
 const Calendar = () => {
@@ -103,7 +104,7 @@ const Calendar = () => {
     new Date(date.getFullYear(), date.getMonth(), 0).getDay() + 1;
   const [isClicked, setIsClicked] = useState(false);
   const [iter, setIter] = useState(null);
-  const [iterReserve, setIterReserve] = useState([]); //month
+  const [iterReserve] = useState([]); //month
   const [janIterReserve, setJanIterReserve] = useState([]);
   const [febIterReserve, setFebIterReserve] = useState([]);
   const [marIterReserve, setMarIterReserve] = useState([]);
@@ -137,21 +138,21 @@ const Calendar = () => {
       return;
     } else if (!selectedIterReserve.includes(iter) && month === mon) {
       setSelectedIterReserve([...selectedIterReserve, iter]);
-      refs.current[iter].style.color = "#FFFFFF";
-      refs.current[iter].style.backgroundColor = "#FF5A60";
-      refs.current[iter].style.borderRadius = "0.2rem";
+      refs.current[iter].style.color = '#FFFFFF';
+      refs.current[iter].style.backgroundColor = '#FF5A60';
+      refs.current[iter].style.borderRadius = '0.2rem';
     } else if (selectedIterReserve.includes(iter) && month === mon) {
       setSelectedIterReserve(selectedIterReserve.filter((num) => num !== iter));
-      refs.current[iter].style.color = "black";
-      refs.current[iter].style.backgroundColor = "rgba(0, 0, 0, 0.0)";
-      refs.current[iter].style.borderRadius = "0.2rem";
+      refs.current[iter].style.color = 'black';
+      refs.current[iter].style.backgroundColor = 'rgba(0, 0, 0, 0.0)';
+      refs.current[iter].style.borderRadius = '0.2rem';
     }
   };
   const selectedCounter = (selectedIterReserve) => {
     if (selectedIterReserve.length > 10) {
-      refs.current[iter].style.color = "black";
-      refs.current[iter].style.backgroundColor = "rgba(0, 0, 0, 0.0)";
-      refs.current[iter].style.borderRadius = "0.2rem";
+      refs.current[iter].style.color = 'black';
+      refs.current[iter].style.backgroundColor = 'rgba(0, 0, 0, 0.0)';
+      refs.current[iter].style.borderRadius = '0.2rem';
       for (const el of iterReserve) {
         if (el > 0) {
           // refs.current[el].style.color = "black";
@@ -159,24 +160,24 @@ const Calendar = () => {
           // refs.current[el].style.borderRadius = "0.2rem";
         }
       }
-      alert("선택 가능한 날짜는 최대 10 일입니다.");
+      alert('선택 가능한 날짜는 최대 10 일입니다.');
     }
   };
   const selectedRedraw = (selectedIterReserve, mon, chk) => {
     console.log(selectedIterReserve);
     if (month === mon) {
       selectedIterReserve.map((v, i) => {
-        refs.current[v].style.color = "#FFFFFF";
-        refs.current[v].style.backgroundColor = "#FF5A60";
-        refs.current[v].style.borderRadius = "0.2rem";
+        refs.current[v].style.color = '#FFFFFF';
+        refs.current[v].style.backgroundColor = '#FF5A60';
+        refs.current[v].style.borderRadius = '0.2rem';
       });
     }
   };
   useEffect(() => {
     refs.current.map((v) => {
-      v.style.color = "black";
-      v.style.backgroundColor = "rgba(0,0,0,0.0)";
-      v.style.borderRadius = "0.2rem";
+      v.style.color = 'black';
+      v.style.backgroundColor = 'rgba(0,0,0,0.0)';
+      v.style.borderRadius = '0.2rem';
     });
   }, [month]);
 
@@ -208,7 +209,7 @@ const Calendar = () => {
     selectorDraw(aprIterReserve, setAprIterReserve, 3);
   }, [isClicked]); //APR draw selected days in calender
   useEffect(() => {
-    selectedRedraw(aprIterReserve, 3, "apr");
+    selectedRedraw(aprIterReserve, 3, 'apr');
   }, [month]); //APR redraw when came back origin month
 
   useEffect(() => {
@@ -278,9 +279,9 @@ const Calendar = () => {
   useEffect(() => {
     if (month === new Date().getMonth()) {
       // console.log("draw today");
-      refs.current[today - 1].style.color = "white";
-      refs.current[today - 1].style.backgroundColor = "rgb(0,138,245)";
-      refs.current[today - 1].style.borderRadius = "0.2rem";
+      refs.current[today - 1].style.color = 'white';
+      refs.current[today - 1].style.backgroundColor = 'rgb(0,138,245)';
+      refs.current[today - 1].style.borderRadius = '0.2rem';
     }
   }, [month]);
   //draw today
@@ -292,7 +293,7 @@ const Calendar = () => {
           onClick={() => {
             setRender(date.setMonth(date.getMonth() - 1));
           }}></FontAwesomeIcon>
-        <div className="calendarTitle">
+        <div className='calendarTitle'>
           {year} {months[month]} {today}
         </div>
         <FontAwesomeIcon
@@ -311,7 +312,7 @@ const Calendar = () => {
 
       <Days>
         {[...Array(prevLastDay === 7 ? 0 : prevLastDay)].map((v, i) => (
-          <li key={i} className="prevDays">
+          <li key={i} className='prevDays'>
             <div>{prevLastDate - prevLastDay + i + 1}</div>
           </li>
         ))}
@@ -321,7 +322,7 @@ const Calendar = () => {
           </li>
         ))}
         {[...Array(7 - lastDay - 1)].map((v, i) => (
-          <li className="nextDays">
+          <li className='nextDays'>
             <div>{i + 1}</div>
           </li>
         ))}

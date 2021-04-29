@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const SearchStyle = styled.div`
   position: fixed;
   top: 2rem;
@@ -42,27 +42,27 @@ const SearchStyle = styled.div`
     color: #242424;
   }
   & ::placeholder {
-    color: black;
+    color: #222222;
     text-align: center;
   }
   & ::-webkit-input-placeholder {
-    color: black;
+    color: #222222;
     text-align: center;
   }
   /*firefox 19+ versions*/
   & ::-moz-placeholder {
-    color: black;
+    color: #222222;
     text-align: center;
   }
   /*IE  versions*/
   & ::-ms-placeholder {
-    color: black;
+    color: #222222;
     text-align: center;
   }
   /*Latest modern browsers */
 
   & ::placeholder {
-    color: black;
+    color: #222222;
     text-align: center;
     background-image: url();
   }
@@ -73,14 +73,14 @@ const SearchBar = () => {
 
   return (
     <SearchStyle>
-      <div className="inputStyle">
-        <div className="inputPosition">
-          <FontAwesomeIcon icon={faSearch} className="searchIcon" />
+      <div className='inputStyle'>
+        <div className='inputPosition'>
+          <FontAwesomeIcon icon={faSearch} className='searchIcon' />
           <input
-            className="search"
-            type="search"
-            name="destination"
-            placeholder="어디로 여행가세요?"
+            className='search'
+            type='search'
+            name='destination'
+            placeholder='어디로 여행가세요?'
           />
         </div>
       </div>
