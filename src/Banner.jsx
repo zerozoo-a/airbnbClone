@@ -1,9 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const BannerStyle = styled.div`
-  height: 70vh;
-  background-image: url("https://a0.muscache.com/im/pictures/b65bef33-07be-4c55-b613-bb990193e8f6.jpg?im_w=720");
+  background-image: url('https://a0.muscache.com/im/pictures/b65bef33-07be-4c55-b613-bb990193e8f6.jpg?im_w=1440');
   background-size: cover;
   background-repeat: no-repeat;
   resize: both;
@@ -11,7 +10,8 @@ const BannerStyle = styled.div`
   & .script {
     width: 90%;
     white-space: pre-wrap;
-    padding-top: 25%;
+    padding-top: 45%;
+    padding-bottom: 40%;
     padding-left: 5%;
   }
   & .script h1 {
@@ -34,10 +34,10 @@ const Banner = () => {
   return (
     <>
       <BannerStyle>
-        <div className="script">
+        <div className='script'>
           <h1>슬기로운 자연생활</h1>
           <p>에어비앤비가 엄선한 위시리스트를 만나보세요.</p>
-          <div className="bannerBtn">여행 아이디어 얻기</div>
+          <div className='bannerBtn'>여행 아이디어 얻기</div>
         </div>
       </BannerStyle>
     </>

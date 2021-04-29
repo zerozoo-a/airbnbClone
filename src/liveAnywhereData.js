@@ -2,6 +2,12 @@ const data = {
   dataName: 'Airbnb clone LiveAnywhere Data',
   dataList: [
     {
+      desc: '집 전체',
+      imageURL:
+        'https://a0.muscache.com/im/pictures/7d82ca14-56e5-4465-8218-dcfa7d69b6ac.jpg?im_w=720',
+      alt: '집의 전경',
+    },
+    {
       desc: '자연생활을 만끽할 수 있는 숙소',
       imageURL:
         'https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=720',

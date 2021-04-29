@@ -4,7 +4,8 @@ import SearchBar from './SearchBar';
 import Banner from './Banner';
 import ExploreNearby from './ExploreNearby';
 import LiveAnywhere from './LiveAnywhere';
-import OverflowYscroll from './OverflowYscroll';
+import BecomeHost from './BecomeHost';
+import DiscoverExperiences from './DiscoverExperiences';
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -25,6 +26,8 @@ const App = () => (
       <Banner />
       <ExploreNearby />
       <LiveAnywhere />
+      <BecomeHost />
+      <DiscoverExperiences />
     </div>
   </>
 );
