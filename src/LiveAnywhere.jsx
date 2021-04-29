@@ -2,17 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import liveAnywhereData from './liveAnywhereData';
 
-const LiveAnywhereTitle = styled.h2`
-  padding: 0 0 0 2.5rem;
-`;
 const LiveAnywhereStyle = styled.div`
-  padding: 0;
-  margin: 0;
   overflow-x: scroll;
+  padding: 0;
   & h2 {
-    padding: 0 0 0 2.5rem;
+    padding-left: 1.5rem;
   }
   & ul {
+    padding: 0;
+    padding-left: 1.5rem;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -30,8 +28,8 @@ const LiveAnywhereStyle = styled.div`
 `;
 const LiveAnywhere = () => (
   <>
-    <LiveAnywhereTitle>어디에서나, 여행은 살아보는거야!</LiveAnywhereTitle>
     <LiveAnywhereStyle>
+      <h2>어디에서나, 여행은 살아보는거야!</h2>
       <ul>
         {liveAnywhereData.dataList.map((v) => (
           <div>

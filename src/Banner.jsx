@@ -30,8 +30,7 @@ const BannerStyle = styled.div`
   }
 `;
 
-const Banner = () => {
-  return (
+const Banner = () => (
     <>
       <BannerStyle>
         <div className='script'>
@@ -42,6 +41,5 @@ const Banner = () => {
       </BannerStyle>
     </>
   );
-};
 
 export default Banner;

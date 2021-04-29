@@ -6,11 +6,15 @@ const ExploreNearbyStyle = styled.div`
   margin: 0;
   padding: 0;
   color: #222222;
+  & h2 {
+    padding-left: 1.5rem;
+  }
   & p {
     font-size: 1.375rem;
   }
   & .infoBox {
     display: flex;
+    padding: 0;
     align-items: center;
     & div {
       width: 13rem;
@@ -20,10 +24,10 @@ const ExploreNearbyStyle = styled.div`
     list-style: none;
   }
   & ul {
+    padding-left: 1.5rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 0;
     height: 13.75rem;
     overflow-x: scroll;
   }
@@ -31,12 +35,11 @@ const ExploreNearbyStyle = styled.div`
     width: 4.5rem;
     height: 4.5rem;
     border-radius: 0.4rem;
-    margin: 1rem;
+    margin: 1rem 1rem 1rem 0;
   }
 `;
 
-const ExploreNearby = () => {
-  return (
+const ExploreNearby = () => (
     <ExploreNearbyStyle>
       <h2>가까운 여행지 둘러보기</h2>
       <ul>
@@ -56,6 +59,5 @@ const ExploreNearby = () => {
       </ul>
     </ExploreNearbyStyle>
   );
-};
 
 export default ExploreNearby;

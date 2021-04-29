@@ -104,7 +104,7 @@ const Calendar = () => {
     new Date(date.getFullYear(), date.getMonth(), 0).getDay() + 1;
   const [isClicked, setIsClicked] = useState(false);
   const [iter, setIter] = useState(null);
-  const [iterReserve] = useState([]); //month
+  const [iterReserve] = useState([]); // month
   const [janIterReserve, setJanIterReserve] = useState([]);
   const [febIterReserve, setFebIterReserve] = useState([]);
   const [marIterReserve, setMarIterReserve] = useState([]);
@@ -119,15 +119,15 @@ const Calendar = () => {
   const [decIterReserve, setDecIterReserve] = useState([]);
   const [render, setRender] = useState(date);
   const [today, setToday] = useState(new Date().getDate());
-  //refs
-  const refs = useRef([]); //여러 refs를 지정 할 것이다.
+  // refs
+  const refs = useRef([]); // 여러 refs를 지정 할 것이다.
   refs.current = []; // refs가 여러가지이면 refs.current는 refs를 담는 그릇이므로 여러가지여야 한다.
   const addToRefs = (el) => {
     if (el && !refs.current.includes(el)) {
       refs.current.push(el);
     }
-  }; //refs.current.push는 순서대로 ref값을 refs.current 배열에 담는다
-  //refs setting
+  }; // refs.current.push는 순서대로 ref값을 refs.current 배열에 담는다
+  // refs setting
 
   const clickedHandler = (i) => {
     setIsClicked(!isClicked);
@@ -135,7 +135,6 @@ const Calendar = () => {
   };
   const selectorDraw = (selectedIterReserve, setSelectedIterReserve, mon) => {
     if (iter === null) {
-      return;
     } else if (!selectedIterReserve.includes(iter) && month === mon) {
       setSelectedIterReserve([...selectedIterReserve, iter]);
       refs.current[iter].style.color = '#FFFFFF';
@@ -184,97 +183,97 @@ const Calendar = () => {
   useEffect(() => {
     selectedCounter(janIterReserve);
     selectorDraw(janIterReserve, setJanIterReserve, 0);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(janIterReserve, 0);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
   useEffect(() => {
     selectedCounter(febIterReserve);
     selectorDraw(febIterReserve, setFebIterReserve, 1);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(febIterReserve, 1);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
 
   useEffect(() => {
     selectedCounter(marIterReserve);
     selectorDraw(marIterReserve, setMarIterReserve, 2);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(marIterReserve, 2);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
 
   useEffect(() => {
     selectedCounter(aprIterReserve);
     selectorDraw(aprIterReserve, setAprIterReserve, 3);
-  }, [isClicked]); //APR draw selected days in calender
+  }, [isClicked]); // APR draw selected days in calender
   useEffect(() => {
     selectedRedraw(aprIterReserve, 3, 'apr');
-  }, [month]); //APR redraw when came back origin month
+  }, [month]); // APR redraw when came back origin month
 
   useEffect(() => {
     selectedCounter(mayIterReserve);
     selectorDraw(mayIterReserve, setMayIterReserve, 4);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(mayIterReserve, 4);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
 
   useEffect(() => {
     selectedCounter(junIterReserve);
     selectorDraw(junIterReserve, setJunIterReserve, 5);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(junIterReserve, 5);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
 
   useEffect(() => {
     selectedCounter(julIterReserve);
     selectorDraw(julIterReserve, setJulIterReserve, 6);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(julIterReserve, 6);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
 
   useEffect(() => {
     selectedCounter(augIterReserve);
     selectorDraw(augIterReserve, setAugIterReserve, 7);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(augIterReserve, 7);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
 
   useEffect(() => {
     selectedCounter(sepIterReserve);
     selectorDraw(sepIterReserve, setSepIterReserve, 8);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(sepIterReserve, 8);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
 
   useEffect(() => {
     selectedCounter(octIterReserve);
     selectorDraw(octIterReserve, setOctIterReserve, 9);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(octIterReserve, 9);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
 
   useEffect(() => {
     selectedCounter(novIterReserve);
     selectorDraw(novIterReserve, setNovIterReserve, 10);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(novIterReserve, 10);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
 
   useEffect(() => {
     selectedCounter(decIterReserve);
     selectorDraw(decIterReserve, setDecIterReserve, 11);
-  }, [isClicked]); //JAN draw
+  }, [isClicked]); // JAN draw
   useEffect(() => {
     selectedRedraw(decIterReserve, 11);
-  }, [month]); //redraw when came back origin month
+  }, [month]); // redraw when came back origin month
 
   useEffect(() => {
     if (month === new Date().getMonth()) {
@@ -284,7 +283,7 @@ const Calendar = () => {
       refs.current[today - 1].style.borderRadius = '0.2rem';
     }
   }, [month]);
-  //draw today
+  // draw today
   return (
     <CalendarStyle>
       <CalendarTopStyle>
@@ -292,7 +291,8 @@ const Calendar = () => {
           icon={faChevronLeft}
           onClick={() => {
             setRender(date.setMonth(date.getMonth() - 1));
-          }}></FontAwesomeIcon>
+          }}
+        />
         <div className='calendarTitle'>
           {year} {months[month]} {today}
         </div>
@@ -300,7 +300,8 @@ const Calendar = () => {
           icon={faChevronRight}
           onClick={() => {
             setRender(date.setMonth(date.getMonth() + 1));
-          }}></FontAwesomeIcon>
+          }}
+        />
       </CalendarTopStyle>
       <div>
         <DayStyle>
