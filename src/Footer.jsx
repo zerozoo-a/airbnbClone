@@ -12,6 +12,7 @@ const FooterContainerStyle = styled.footer`
     border-color: rgba(221, 221, 221, 0.3);
   }
   & .lang a {
+    font-size: 0.875rem;
     color: #222222;
     margin-right: 1rem;
   }
@@ -47,9 +48,17 @@ const FooterStyle = styled.div`
 const FooterInfoStyle = styled.div`
   list-style: none;
   padding-top: 1rem;
+  & div {
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
   & ul {
+    width: 90vw;
+    font-weight: 300;
     display: flex;
+    flex-wrap: wrap;
     padding: 0;
+    font-size: 0.875rem;
   }
   & ul li {
     list-style: none;
