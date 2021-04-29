@@ -7,6 +7,7 @@ import LiveAnywhere from './LiveAnywhere';
 import BecomeHost from './BecomeHost';
 import DiscoverExperiences from './DiscoverExperiences';
 import Footer from './Footer';
+import BottomNav from './BottomNav';
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -30,6 +31,7 @@ const App = () => (
       <BecomeHost />
       <DiscoverExperiences />
       <Footer />
+      <BottomNav />
     </ComponentStyle>
   </>
 );
