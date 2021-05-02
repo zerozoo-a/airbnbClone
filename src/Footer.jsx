@@ -79,7 +79,7 @@ const Footer = () => (
             <h4>{v.title}</h4>
             <ul className='innerUl'>
               {v.desc.map((val) => (
-                <li>
+                <li key={val.list}>
                   <a href='#!'>{val.list} </a>
                 </li>
               ))}
@@ -99,7 +99,7 @@ const Footer = () => (
       </div>
       <ul>
         {data.info.map((v) => (
-          <li> {v.list} </li>
+          <li key={v.list}> {v.list} </li>
         ))}
       </ul>
     </FooterInfoStyle>

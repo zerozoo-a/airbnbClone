@@ -28,36 +28,42 @@ const ExploreNearbyStyle = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 13.75rem;
+    height: 14.75rem;
     overflow-x: scroll;
   }
+
   & img {
     width: 4.5rem;
     height: 4.5rem;
     border-radius: 0.4rem;
     margin: 1rem 1rem 1rem 0;
   }
+  & ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
 const ExploreNearby = () => (
-    <ExploreNearbyStyle>
-      <h2>가까운 여행지 둘러보기</h2>
-      <ul>
-        {nearDestinationData.locationList.map((v) => (
-          <li key={v.alt}>
-            <div className='infoBox'>
-              <img src={v.imageURL} alt={v.alt} />
+  <ExploreNearbyStyle>
+    <h2>가까운 여행지 둘러보기</h2>
+    <ul>
+      {nearDestinationData.locationList.map((v) => (
+        <li key={v.alt}>
+          <div className='infoBox'>
+            <img src={v.imageURL} alt={v.alt} />
+            <div>
               <div>
-                <div>
-                  <b>{v.location}</b>
-                </div>
-                <div>{v.distance}</div>
+                <b>{v.location}</b>
               </div>
+              <div>{v.distance}</div>
             </div>
-          </li>
-        ))}
-      </ul>
-    </ExploreNearbyStyle>
-  );
+          </div>
+        </li>
+      ))}
+    </ul>
+  </ExploreNearbyStyle>
+);
 
 export default ExploreNearby;

@@ -24,6 +24,11 @@ const DiscoverExperiencesStyle = styled.div`
     font-size: 1.225rem;
     font-weight: 600;
   }
+  & ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 const DiscoverExperiences = () => (
   <>

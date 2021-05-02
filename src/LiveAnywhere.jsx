@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import liveAnywhereData from './liveAnywhereData';
 
 const LiveAnywhereStyle = styled.div`
-  overflow-x: scroll;
   padding: 0;
+
   & h2 {
     padding-left: 1.5rem;
   }
@@ -15,6 +15,7 @@ const LiveAnywhereStyle = styled.div`
     display: flex;
     flex-direction: row;
     column-gap: 12px;
+    overflow-x: scroll;
     & img {
       width: 40vw;
       border-radius: 0.8rem;
@@ -25,20 +26,24 @@ const LiveAnywhereStyle = styled.div`
       width: 35vw;
     }
   }
+
+  & ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 const LiveAnywhere = () => (
-  <>
-    <LiveAnywhereStyle>
-      <h2>어디에서나, 여행은 살아보는거야!</h2>
-      <ul>
-        {liveAnywhereData.dataList.map((v) => (
-          <div>
-            <img src={v.imageURL} alt={v.alt} />
-            <li>{v.desc}</li>
-          </div>
-        ))}
-      </ul>
-    </LiveAnywhereStyle>
-  </>
+  <LiveAnywhereStyle>
+    <h2>어디에서나, 여행은 살아보는거야!</h2>
+    <ul>
+      {liveAnywhereData.dataList.map((v) => (
+        <div key={v.desc}>
+          <img src={v.imageURL} alt={v.alt} />
+          <li>{v.desc}</li>
+        </div>
+      ))}
+    </ul>
+  </LiveAnywhereStyle>
 );
 export default LiveAnywhere;

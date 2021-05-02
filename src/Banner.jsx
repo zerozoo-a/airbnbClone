@@ -31,15 +31,15 @@ const BannerStyle = styled.div`
 `;
 
 const Banner = () => (
-    <>
-      <BannerStyle>
-        <div className='script'>
-          <h1>슬기로운 자연생활</h1>
-          <p>에어비앤비가 엄선한 위시리스트를 만나보세요.</p>
-          <div className='bannerBtn'>여행 아이디어 얻기</div>
-        </div>
-      </BannerStyle>
-    </>
-  );
+  <>
+    <BannerStyle>
+      <div className='script'>
+        <h1>슬기로운 자연생활</h1>
+        <p>에어비앤비가 엄선한 위시리스트를 만나보세요.</p>
+        <div className='bannerBtn'>여행 아이디어 얻기</div>
+      </div>
+    </BannerStyle>
+  </>
+);
 
 export default Banner;
