@@ -109,12 +109,8 @@ const SearchBar = () => {
 
     if (scrollY > 100) {
       setScrollToggle(true);
-      console.log('scrollToggle:' + scrollToggle);
-      console.log('scroll:' + scrollY);
     } else {
       setScrollToggle(false);
-      console.log('scroll:' + scrollY);
-      console.log('scrollToggle:' + scrollToggle);
     }
     return () => {
       window.removeEventListener('scroll', () =>
@@ -142,4 +138,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default React.memo(SearchBar);
