@@ -82,7 +82,7 @@ function SearchModal({ searchModalToggle, setSearchModalToggle }) {
           iteratingLocation.location.includes(input) ||
           iteratingLocation.locationEng
             .toLowerCase()
-            .includes(input.toLowerCase)
+            .includes(input.toLowerCase())
         );
       } else {
         return locations;
@@ -100,7 +100,10 @@ function SearchModal({ searchModalToggle, setSearchModalToggle }) {
                 onClick={() => setSearchModalToggle(!searchModalToggle)}
                 icon={faChevronLeft}
               />
-              <input placeholder='어디로 여행가세요?' />
+              <input
+                onChange={(e) => setInput(e.target.value)}
+                placeholder='어디로 여행가세요?'
+              />
               <div className='onNearbyPopularLocation'>
                 <img
                   alt={nearDestinationData.alt}
@@ -112,7 +115,7 @@ function SearchModal({ searchModalToggle, setSearchModalToggle }) {
             <div>
               <ul className='nearbyPopularLocation'>
                 <div>근처의 인기 여행지</div>
-                {nearDestinationData.locationList.map((v) => (
+                {filteredList(input, locations).map((v) => (
                   <li key={v.location}>
                     <img src={v.imageURL} alt={v.alt} />
                     <div>
