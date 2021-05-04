@@ -16,6 +16,9 @@ const SearchModalStyle = styled.div`
   top: 0;
   z-index: 200;
   /* Search, bottomNav z-index=100 */
+  span {
+    cursor: pointer;
+  }
   & ul,
   .searchStyle {
     padding: 0;
@@ -25,6 +28,7 @@ const SearchModalStyle = styled.div`
   .searchStyle {
     & :nth-child(1) {
       margin-right: 1.875rem;
+      cursor: pointer;
     }
     & input {
       height: 2.375rem;
@@ -39,12 +43,15 @@ const SearchModalStyle = styled.div`
   }
   & li {
     list-style: none;
+    cursor: pointer;
   }
   & img {
     width: 3rem;
     height: 3rem;
     margin-right: 1rem;
     border-radius: 0.4rem;
+    cursor: pointer;
+
     /* same radius as ExploreNearby border-radius */
   }
   & .onNearbyPopularLocation {
