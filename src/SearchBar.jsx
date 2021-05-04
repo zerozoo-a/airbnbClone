@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import SearchModal from './SearchModal';
+
 const SearchStyle = styled.div`
   position: fixed;
   top: 2rem;
@@ -70,7 +72,9 @@ const SearchStyle = styled.div`
     border: 0px;
     font-weight: 600;
     color: #242424;
+    pointer-events: none;
   }
+
   & ::placeholder {
     color: #222222;
     text-align: center;
@@ -100,7 +104,9 @@ const SearchStyle = styled.div`
 
 const SearchBar = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [reserveScrollY, setReserveScrollY] = useState(0);
   const [scrollToggle, setScrollToggle] = useState(false);
+  const [searchModalToggle, setSearchModalToggle] = useState(false);
   // scroll event
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -118,23 +124,38 @@ const SearchBar = () => {
       );
     };
   });
+  useEffect(() => {
+    setReserveScrollY(scrollY);
+    if (searchModalToggle) {
+      document.querySelector('body').style.position = 'fixed';
+    } else {
+      document.querySelector('body').style.position = 'absolute';
+      window.scrollTo(0, reserveScrollY);
+    }
+  }, [searchModalToggle]);
 
   return (
-    <SearchStyle>
-      <div className={scrollToggle ? 'inputWrapper' : 'wpr'}>
-        <div className={scrollToggle ? 'toggledStyle' : 'inputStyle '}>
-          <div className='inputPosition'>
-            <FontAwesomeIcon icon={faSearch} className='searchIcon' />
-            <input
-              className='search'
-              type='search'
-              name='destination'
-              placeholder='어디로 여행가세요?'
-            />
+    <>
+      <SearchStyle onClick={() => setSearchModalToggle(!searchModalToggle)}>
+        <div className={scrollToggle ? 'inputWrapper' : 'wpr'}>
+          <div className={scrollToggle ? 'toggledStyle' : 'inputStyle '}>
+            <div className='inputPosition'>
+              <FontAwesomeIcon icon={faSearch} className='searchIcon' />
+              <input
+                className='search'
+                type='search'
+                name='destination'
+                placeholder='어디로 여행가세요?'
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </SearchStyle>
+      </SearchStyle>
+      <SearchModal
+        searchModalToggle={searchModalToggle}
+        setSearchModalToggle={setSearchModalToggle}
+      />
+    </>
   );
 };
 

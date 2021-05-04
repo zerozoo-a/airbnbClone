@@ -11,9 +11,6 @@ import BottomNav from './BottomNav';
 
 const GlobalStyle = createGlobalStyle`
 body{
-  & ::-webkit-scrollbar{
-    display:none;
-  }
   color:#222222;
   margin:0;
   padding:0;
@@ -24,7 +21,7 @@ body{
 const ComponentStyle = styled.div``;
 
 const App = () => (
-  <>
+  <div>
     <GlobalStyle />
     <ComponentStyle>
       <SearchBar />
@@ -36,6 +33,6 @@ const App = () => (
       <Footer />
       <BottomNav />
     </ComponentStyle>
-  </>
+  </div>
 );
 export default App;
