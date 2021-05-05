@@ -6,6 +6,18 @@ import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 import data from './FooterData';
 
 const FooterContainerStyle = styled.footer`
+  @media screen and (min-width: 745px) {
+    .FooterContainer {
+      width: 90vw;
+    }
+    .innerUl {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        width: 30vw;
+      }
+    }
+  }
   padding-left: 1.5rem;
   background-color: #f7f7f7;
   & hr {
@@ -45,7 +57,7 @@ const FooterStyle = styled.div`
     border-color: rgba(221, 221, 221, 0.3);
   }
 `;
-const FooterInfoStyle = styled.div`
+const FooterLangCurrencyCopyRight = styled.div`
   list-style: none;
   padding-top: 1rem;
   & div {
@@ -93,7 +105,7 @@ const Footer = () => (
       <FontAwesomeIcon icon={faGlobe} /> <a href='#!'>한국어(KR)</a>
       <FontAwesomeIcon icon={faWonSign} /> <a href='#!'>KRW</a>
     </div>
-    <FooterInfoStyle>
+    <FooterLangCurrencyCopyRight>
       <div>
         <FontAwesomeIcon icon={faCopyright} /> 2021 Airbnb, Inc.
       </div>
@@ -102,7 +114,7 @@ const Footer = () => (
           <li key={v.list}> {v.list} </li>
         ))}
       </ul>
-    </FooterInfoStyle>
+    </FooterLangCurrencyCopyRight>
   </FooterContainerStyle>
 );
 

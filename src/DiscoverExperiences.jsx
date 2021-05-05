@@ -17,7 +17,7 @@ const DiscoverExperiencesStyle = styled.div`
     list-style: none;
   }
   & img {
-    width: 62vw;
+    width: 50vw;
     border-radius: 0.8rem;
   }
   & div {
