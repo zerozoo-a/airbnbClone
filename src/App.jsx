@@ -11,6 +11,7 @@ import BottomNav from './BottomNav';
 
 const GlobalStyle = createGlobalStyle`
 body{
+  width:100vw;
   color:#222222;
   margin:0;
   padding:0;

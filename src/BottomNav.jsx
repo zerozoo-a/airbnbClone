@@ -7,8 +7,9 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const BottomNavStyle = styled.div`
   display: flex;
   position: fixed;
-  height: 5rem;
-  top: 90vh;
+  /* height: 5rem; */
+  height: 11vh;
+  top: 90%;
   width: 100vw;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -31,11 +32,11 @@ const BottomNavStyle = styled.div`
 `;
 const BottomContainerStyle = styled.div`
   & .navOff {
-    top: 100%;
+    top: 100vh;
     transition: all 0.2s ease-in-out;
   }
   & .navOn {
-    top: 90vh;
+    top: 89vh;
     transition: all 0.2s ease-in-out;
   }
 `;

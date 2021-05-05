@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BannerStyle = styled.div`
+  width: auto;
   background-image: url('https://a0.muscache.com/im/pictures/b65bef33-07be-4c55-b613-bb990193e8f6.jpg?im_w=1440');
   background-size: cover;
   background-repeat: no-repeat;
@@ -28,6 +29,30 @@ const BannerStyle = styled.div`
     border-radius: 0.6rem;
     cursor: pointer;
   }
+  @media screen and (min-width: 949px) {
+    & .script {
+      width: 25%;
+      white-space: pre-wrap;
+      padding-top: 30%;
+      padding-bottom: 40%;
+      padding-left: 15%;
+      font-size: 2rem;
+    }
+    & .script h1 {
+      min-width: 7rem;
+    }
+    & .bannerBtn {
+      background: black;
+      width: 8.438rem;
+      color: white;
+      text-align: center;
+      height: 2rem;
+      line-height: 2rem;
+      font-size: 0.8rem;
+      border-radius: 0.6rem;
+      cursor: pointer;
+    }
+  } ;
 `;
 
 const Banner = () => (
