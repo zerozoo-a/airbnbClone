@@ -8,6 +8,7 @@ import BecomeHost from './BecomeHost';
 import DiscoverExperiences from './DiscoverExperiences';
 import Footer from './Footer';
 import BottomNav from './BottomNav';
+import Calendar from './Calendar.jsx';
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -33,6 +34,7 @@ const App = () => (
       <DiscoverExperiences />
       <Footer />
       <BottomNav />
+      <Calendar />
     </ComponentStyle>
   </div>
 );

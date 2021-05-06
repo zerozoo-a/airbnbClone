@@ -183,22 +183,22 @@ const Calendar = () => {
   useEffect(() => {
     selectedCounter(janIterReserve);
     selectorDraw(janIterReserve, setJanIterReserve, 0);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(janIterReserve, 0);
-  }, [month]); // redraw when came back origin month
+  }, [month]);
   useEffect(() => {
     selectedCounter(febIterReserve);
     selectorDraw(febIterReserve, setFebIterReserve, 1);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(febIterReserve, 1);
-  }, [month]); // redraw when came back origin month
+  }, [month]);
 
   useEffect(() => {
     selectedCounter(marIterReserve);
     selectorDraw(marIterReserve, setMarIterReserve, 2);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(marIterReserve, 2);
   }, [month]); // redraw when came back origin month
@@ -209,12 +209,12 @@ const Calendar = () => {
   }, [isClicked]); // APR draw selected days in calender
   useEffect(() => {
     selectedRedraw(aprIterReserve, 3, 'apr');
-  }, [month]); // APR redraw when came back origin month
+  }, [month]);
 
   useEffect(() => {
     selectedCounter(mayIterReserve);
     selectorDraw(mayIterReserve, setMayIterReserve, 4);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(mayIterReserve, 4);
   }, [month]); // redraw when came back origin month
@@ -222,7 +222,7 @@ const Calendar = () => {
   useEffect(() => {
     selectedCounter(junIterReserve);
     selectorDraw(junIterReserve, setJunIterReserve, 5);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(junIterReserve, 5);
   }, [month]); // redraw when came back origin month
@@ -230,7 +230,7 @@ const Calendar = () => {
   useEffect(() => {
     selectedCounter(julIterReserve);
     selectorDraw(julIterReserve, setJulIterReserve, 6);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(julIterReserve, 6);
   }, [month]); // redraw when came back origin month
@@ -238,7 +238,7 @@ const Calendar = () => {
   useEffect(() => {
     selectedCounter(augIterReserve);
     selectorDraw(augIterReserve, setAugIterReserve, 7);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(augIterReserve, 7);
   }, [month]); // redraw when came back origin month
@@ -246,7 +246,7 @@ const Calendar = () => {
   useEffect(() => {
     selectedCounter(sepIterReserve);
     selectorDraw(sepIterReserve, setSepIterReserve, 8);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(sepIterReserve, 8);
   }, [month]); // redraw when came back origin month
@@ -254,7 +254,7 @@ const Calendar = () => {
   useEffect(() => {
     selectedCounter(octIterReserve);
     selectorDraw(octIterReserve, setOctIterReserve, 9);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(octIterReserve, 9);
   }, [month]); // redraw when came back origin month
@@ -262,7 +262,7 @@ const Calendar = () => {
   useEffect(() => {
     selectedCounter(novIterReserve);
     selectorDraw(novIterReserve, setNovIterReserve, 10);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(novIterReserve, 10);
   }, [month]); // redraw when came back origin month
@@ -270,7 +270,7 @@ const Calendar = () => {
   useEffect(() => {
     selectedCounter(decIterReserve);
     selectorDraw(decIterReserve, setDecIterReserve, 11);
-  }, [isClicked]); // JAN draw
+  }, [isClicked]);
   useEffect(() => {
     selectedRedraw(decIterReserve, 11);
   }, [month]); // redraw when came back origin month

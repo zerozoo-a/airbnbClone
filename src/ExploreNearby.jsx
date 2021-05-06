@@ -45,12 +45,15 @@ const ExploreNearbyStyle = styled.div`
   scrollbar-width: none;
 `;
 
+// callCalendar SearchModal처럼 구성하기
+// 가까운 여행지 선택시 캘린더 창 아래에서 위로 슬라이드 업 구현
+
 const ExploreNearby = () => (
   <ExploreNearbyStyle>
     <h2>가까운 여행지 둘러보기</h2>
     <ul>
       {nearDestinationData.locationList.map((v) => (
-        <li key={v.alt}>
+        <li onClick={() => console.log('call')} key={v.alt}>
           <div className='infoBox'>
             <img src={v.imageURL} alt={v.alt} />
             <div>
