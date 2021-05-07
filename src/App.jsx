@@ -34,7 +34,6 @@ const App = () => (
       <DiscoverExperiences />
       <Footer />
       <BottomNav />
-      <Calendar />
     </ComponentStyle>
   </div>
 );

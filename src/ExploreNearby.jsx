@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Calendar from './Calendar.jsx';
 import nearDestinationData from './nearDestinationData';
 
 const ExploreNearbyStyle = styled.div`
@@ -48,25 +49,47 @@ const ExploreNearbyStyle = styled.div`
 // callCalendar SearchModal처럼 구성하기
 // 가까운 여행지 선택시 캘린더 창 아래에서 위로 슬라이드 업 구현
 
-const ExploreNearby = () => (
-  <ExploreNearbyStyle>
-    <h2>가까운 여행지 둘러보기</h2>
-    <ul>
-      {nearDestinationData.locationList.map((v) => (
-        <li onClick={() => console.log('call')} key={v.alt}>
-          <div className='infoBox'>
-            <img src={v.imageURL} alt={v.alt} />
-            <div>
+const ExploreNearby = () => {
+  const [isCalendarModal, setIsCalendarModal] = useState(false);
+  const [reverseScrollY, setReverseScrollY] = useState(0);
+  useEffect(() => {
+    if (isCalendarModal) {
+      setReverseScrollY(window.pageYOffset);
+      document.querySelector('body').style.position = 'fixed';
+    } else {
+      document.querySelector('body').style.position = 'relative';
+      window.scrollTo(0, reverseScrollY);
+    }
+  }, [isCalendarModal]);
+  const calendarModalHandler = () => {
+    setIsCalendarModal(!isCalendarModal);
+  };
+  return (
+    <ExploreNearbyStyle>
+      {isCalendarModal ? (
+        <Calendar
+          isCalendarModal={isCalendarModal}
+          setIsCalendarModal={setIsCalendarModal}
+        />
+      ) : null}
+      <h2>가까운 여행지 둘러보기</h2>
+      <ul>
+        {nearDestinationData.locationList.map((v) => (
+          <li key={v.alt}>
+            <div className='infoBox' onClick={calendarModalHandler}>
+              <img src={v.imageURL} alt={v.alt} />
               <div>
-                <b>{v.location}</b>
+                <div>
+                  <b>{v.location}</b>
+                </div>
+                <div>{v.distance}</div>
               </div>
-              <div>{v.distance}</div>
             </div>
-          </div>
-        </li>
-      ))}
-    </ul>
-  </ExploreNearbyStyle>
-);
+          </li>
+        ))}
+      </ul>
+    </ExploreNearbyStyle>
+  );
+};
 
 export default ExploreNearby;

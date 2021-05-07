@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import nearDestinationData from './nearDestinationData';
+import Calendar from './Calendar.jsx';
 
 const SearchModalStyle = styled.div`
   display: flex;
@@ -80,6 +81,7 @@ const SearchModalStyle = styled.div`
 function SearchModal({ searchModalToggle, setSearchModalToggle }) {
   const [input, setInput] = useState(null);
   const [locations, setLocations] = useState([]);
+  const [isCalendarModal, setIsCalendarModal] = useState(false);
   useEffect(() => setLocations(nearDestinationData), []);
 
   const filteredList = (input, locations) => {
@@ -100,6 +102,12 @@ function SearchModal({ searchModalToggle, setSearchModalToggle }) {
   return (
     <div>
       <div>
+        {isCalendarModal ? (
+          <Calendar
+            isCalendarModal={isCalendarModal}
+            setIsCalendarModal={setIsCalendarModal}
+          />
+        ) : null}
         {searchModalToggle ? (
           <SearchModalStyle>
             <div className='searchStyle'>
@@ -111,7 +119,9 @@ function SearchModal({ searchModalToggle, setSearchModalToggle }) {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder='어디로 여행가세요?'
               />
-              <div className='onNearbyPopularLocation'>
+              <div
+                onClick={() => setIsCalendarModal(!isCalendarModal)}
+                className='onNearbyPopularLocation'>
                 <img
                   alt={nearDestinationData.alt}
                   src={nearDestinationData.locationImageURL}
@@ -123,7 +133,9 @@ function SearchModal({ searchModalToggle, setSearchModalToggle }) {
               <ul className='nearbyPopularLocation'>
                 <div>근처의 인기 여행지</div>
                 {filteredList(input, locations).map((v) => (
-                  <li key={v.location}>
+                  <li
+                    onClick={() => setIsCalendarModal(!isCalendarModal)}
+                    key={v.location}>
                     <img src={v.imageURL} alt={v.alt} />
                     <div>
                       <div>{v.location}</div>

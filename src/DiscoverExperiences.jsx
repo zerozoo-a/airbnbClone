@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import data from './discoverExperiencesData';
 
@@ -30,25 +30,29 @@ const DiscoverExperiencesStyle = styled.div`
   -ms-overflow-style: none;
   scrollbar-width: none;
 `;
-const DiscoverExperiences = () => (
-  <>
-    <DiscoverExperiencesStyle>
-      <h2>체험 둘러보기</h2>
-      <div>
-        현지 전문가와 함께하는 독특한 액티비티에 오프라인이나 온라인으로
-        참여해보세요.
-      </div>
-      <ul>
-        {data.dataList.map((v) => (
-          <li key={v.id}>
-            <img alt={v.alt} src={v.imageURL} />
-            <div>{v.title}</div>
-            <p>{v.desc}</p>
-          </li>
-        ))}
-      </ul>
-    </DiscoverExperiencesStyle>
-  </>
-);
+const DiscoverExperiences = () => {
+  const [isCalendarRendered, setIsCalendarRendered] = useState(false);
+  return (
+    <>
+      <DiscoverExperiencesStyle>
+        <h2>체험 둘러보기</h2>
+        <div>
+          현지 전문가와 함께하는 독특한 액티비티에 오프라인이나 온라인으로
+          참여해보세요.
+        </div>
+        <ul>
+          {data.dataList.map((v) => (
+            <li key={v.id}>
+              <img alt={v.alt} src={v.imageURL} />
+              <div>{v.title}</div>
+              <p>{v.desc}</p>
+            </li>
+          ))}
+        </ul>
+      </DiscoverExperiencesStyle>
+    </>
+  );
+};
 
 export default DiscoverExperiences;
+// 여기서 바로 calendar를 조건부 렌더링 돌리자!
