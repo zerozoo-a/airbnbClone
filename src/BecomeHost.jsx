@@ -39,7 +39,6 @@ const BecomeHostStyle = styled.div`
     font-size: 1.6rem;
   }
   @media screen and (max-width: 1440px) {
-    position: relative;
     display: flex;
     margin: 1.5rem;
     height: 70vh;
@@ -52,7 +51,7 @@ const BecomeHostStyle = styled.div`
     font-size: 2rem;
     & .desc {
       position: relative;
-      width: 40vw;
+      width: 50vw;
       height: auto;
       text-align: center;
       position: absolute;
@@ -93,6 +92,7 @@ const BecomeHostStyle = styled.div`
       left: 50%;
       transform: translate(-50%, -50%);
       color: #ffffff;
+      font-size: 1rem;
     }
     & .btn {
       width: 7.48rem;
@@ -124,6 +124,10 @@ const BecomeHostStyle = styled.div`
       left: 50%;
       transform: translate(-50%, -50%);
       color: #ffffff;
+      font-size: 1rem;
+      p {
+        font-size: 0.9rem;
+      }
     }
     & .btn {
       width: 7.48rem;
@@ -135,7 +139,7 @@ const BecomeHostStyle = styled.div`
       border-radius: 0.5rem;
       font-size: 0.875rem;
     }
-  } ;
+  }
 `;
 
 const BecomeHost = () => (

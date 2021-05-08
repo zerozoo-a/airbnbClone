@@ -23,6 +23,7 @@ const ExploreNearbyStyle = styled.div`
   }
   & li {
     list-style: none;
+    cursor: pointer;
   }
   & ul {
     padding-left: 1.5rem;
